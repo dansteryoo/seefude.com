@@ -65,14 +65,16 @@ webpack.prod.js
 
 
 [myfitnesspal API](https://www.myfitnesspal.com/api)
-
+- [ ] Interactive D3 pie chart tracking total macros per gram for each category, while also including the comparative percentage from the total intake
+- [ ] Interactive D3 bar chart tracking total micronutrients per meal based on FDA approved nutritional labels of each meal. Will be able to see totals of breakfast, lunch, and dinner. 
+- [ ] All charts will be adjustable so that the user can compare and see which food choices best fit their nutritional goals. 
 
 ## Implementation Timeline
 
 ```bash
-1. Monday - Setup framework for API and 3Djs 
-2. Tuesday - Integrate API and 3Djs
-3. Wednesday - Test API and 3Djs
+1. Monday - Setup fatsecret API for food search and data retrieval 
+2. Tuesday - Create table to store user select foods per meal 
+3. Wednesday - Render D3 pie and bar chart based on data sets of meals
 4. Thursday - Scss
 5. Friday - Scss 
 ```
