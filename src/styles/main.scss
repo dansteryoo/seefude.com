@@ -83,10 +83,9 @@ html {
 
 
 .nutrition-facts-container {
-  font-size: small;
   line-height: 1.5;
   margin: 30px;
-  padding: 10px 5px;
+  padding: 10px 5px 5px;
   border: 1px solid black;
   width: 280px;
 }
@@ -96,11 +95,70 @@ html {
   font-size: 30px;
   border-bottom: 8px solid black;
   width: 99%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
+}
+
+.nutrition-facts-table table {
+  margin: 0;
 }
 
 .small-info {
   font-weight: normal;
-  border-bottom: 1px solid black;
+  font-size: 11px;
+  padding-bottom: 3px;
+  width: 270px;
+}
+
+.daily-values {
+  font-weight: normal;
+  font-size: 11px;
+  border-top: 1px solid black;
+  width: 270px;
+  margin: 5px 5px 0;
+  padding: 5px 0 0;
+}
+
+.daily-total {
+  font-size: 11px;
+  border-top: 4px solid black;
+  width: 270px;
+  margin: 5px 5px 0;
+  padding: 5px 0 3px 183px;
+}
+
+//------------------ Nutrition Totals
+
+#total-calories,
+#total-fat, 
+#total-saturated-fat,
+#total-cholesterol,
+#total-sodium,
+#total-potassium,
+#total-carbohydrate-fiber,
+#total-dietary-fiber,
+#total-sugar,
+#total-protein,
+#total-calcium, 
+#total-iron,
+#total-vitamin-C, 
+#total-vitamin-A {
+  font-weight: normal;
+  float: right;
+}
+
+//------------------ Nutrition Titles
+
+.each-title {
+  border-top: 1px solid black;
+  padding: 4px 0 2px;
+  font-size: 12px;
+  font-weight: normal;
+  padding-left: 20px;
+}
+
+.each-title-bold {
+  border-top: 1px solid black;
+  padding: 4px 0 2px;
+  font-size: 12px;
 }
