@@ -1,14 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <title>Document</title>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <script type='text/javascript'></script>
+
+      <!-- <link href="https://fonts.googleapis.com/css?family=Euphoria+Script&display=swap" rel="stylesheet"> -->
+      <link rel="stylesheet" href="dist/main.css">
+
+        <script src='/lib/d3.v4.js'></script>
+        <script src="lib/fatsecret.js" charset="utf-8"></script>
+        <script src="lib/pie_chart.js" charset="utf-8"></script>
+        <script src="lib/bar_chart.js" charset="utf-8"></script>
+        <!-- <script src="dist/main.js" charset="utf-8"></script> -->
+
+
+    <title>SeeFude.com</title>
   </head>
 
-  <body>
-    <script src="./dist/main.js"></script>
-  </body>
+<body>
+  <div class='header'>
+      <p>Welcome to SeeFude.com</p>
+  </div>
+
+    <div class='site-description-container'>
+      <div class='site-description-title'>Tracking daily nutritional values</div>
+        <div class='site-description-info'>A fun and interactive way to track nutritional values of your daily food intake!</div>
+    </div>
+
+
+<!---------------------- Input Form ---------------------->
+
+
+
+  <div id='food_search' class='fatsecret_container' style='width: 500px'>
+  </div>
+<!-- 
+    <div class='search-container'>
+        <form method='GET' action='{{site.baseurl}}/search-results.html'>
+        <input type='text' id='search' class='search-input form-control' name='query'>
+         <span class='search-span glyphicon glyphicon-search'></span>
+      </form>
+    </div> -->
+
+<!---------------------- Macros ---------------------->
+
+  <div class='macro-pie-container'>
+        <p id='macro-pie-title'>Total Macros</p>
+
+      <div class='macro-pie-chart'>
+        <svg id='pie-chart' width='400px' height='400px'></svg>
+      </div>
+
+    <div class='macro-btn-container'>
+        <button id='pie-k' value='Kcalories'>Kcalories</button>
+        <button id='pie-p' value='Protein'>Protein</button>
+        <button id='pie-f' value='Fats'>Fats</button>
+        <button id='pie-c' value='Carbs'>Carbs</button>
+      </div>
+    </div>
+
+
+<section class='nutrition-facts-container'>
+  <h2 class='nutrition-facts-title'>Nutrition Facts</h2>
+  <!---------------------- Nutrition Facts Main ---------------------->
+
+  <table class='nutrition-facts-table'>
+    <thead>
+      <tr>
+        <th colspan='3' class='small-info'>
+          Amount Per Meal
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th colspan='2'>
+          <span>Total Calorie Intake</span>
+          <span id='total-calorie-intake'>2000</span>
+        </th>
+      </tr>
+      <tr class='thick-row'>
+        <td colspan='3' class='small-info'>
+          Total Daily Value*
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Total Fat
+          <span id='total-fat'>14g</span>
+        </th>
+        <td>
+          <span id='total-fat-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Saturated Fat
+          <span id='total-saturated-fat'>14g</span>
+        </th>
+        <td>
+          <span id='total-saturated-fat-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Trans Fat
+          <span id='total-trans-fat'>0g</span>
+        </th>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Cholesterol
+          <span id='total-cholesterol'>55mg</span>
+        </th>
+        <td>
+          <span id='total-cholesterol-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Sodium
+          <span id='total-sodium'>1000mg</span>
+        </th>
+        <td>
+          <span id='total-sodium-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Total Carbohydrate
+          <span id='total-carbohydrate'>100g</span>
+        </th>
+        <td>
+          <span id='total-carbohydrate-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Dietary Fiber
+          <span id='total-dietary-fiber'>100g</span>
+        </th>
+        <td>
+          <span id='total-dietary-fiber-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Sugars
+          <span id='total-sugar'>100g</span>
+        </th>
+        <td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!---------------------- Nutrition Facts Micros ---------------------->
+
+  <table class='nutrition-facts-micros-'>
+    <tbody>
+      <tr>
+        <th colspan='2'>
+          Vitamin D
+          <span id='total-vitamin-D'>14g</span>
+        </th>
+        <td>
+          <span id='total-vitamin-D-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Calcium
+          <span id='total-calcium'>14g</span>
+        </th>
+        <td>
+          <span id='total-calcium-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Iron
+          <span id='total-iron'>0g</span>
+        </th>
+        <td>
+          <span id='total-iron-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Potassium
+          <span id='total-potassium'>55mg</span>
+        </th>
+        <td>
+          <span id='total-potassium-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Vitamin A
+          <span id='total-vitamin-A'>1000mg</span>
+        </th>
+        <td>
+          <span id='total-vitamin-A-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th colspan='2'>
+          Vitamin C
+          <span id='total-vitamin-C'>100g</span>
+        </th>
+        <td>
+          <span id='total-vitamin-C-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Thiamin
+          <span id='total-thiamin'>100g</span>
+        </th>
+        <td>
+          <span id='total-thiamin-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Riboflavin
+          <span id='total-riboflavin'>100g</span>
+        </th>
+        <td>
+          <span id='total-riboflavin-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Niacin
+          <span id='total-niacin'>100g</span>
+        </th>
+        <td>
+          <span id='total-niacin-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Vitamin B6
+          <span id='total-vitamin-B6'>100g</span>
+        </th>
+        <td>
+          <span id='total-vitamin-B6-percent'>22%</span>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          Vitamin B12
+          <span id='total-vitamin-B12'>100g</span>
+        </th>
+        <td>
+          <span id='total-vitamin-B12'>22%</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!---------------------- Micros ---------------------->
+
+    <div class='micro-bar-container'>
+        <svg id='bar-chart' width='820px' height='600px'></svg>
+    </div>
+
+
+<!---------------------- Scripts ---------------------->
+   
+
+  <script>
+    fatsecret.setContainer('food_search');
+    fatsecret.setCanvas('foods.search');
+  </script>
+<!-- 
+  <script>
+    $('document').ready(function () {
+      $('#search').autocomplete({
+        source: siteIndex,
+        minLength: 2,
+        select: function (event, ui) {
+          window.location.href = window.location.origin + '{{site.baseurl}}' + '/' + ui.item.url.replace('.md', '.html');
+        },
+        open: function (event, ui) {
+          $('.ui-autocomplete').css('z-index', 10000);
+          $('.ui-autocomplete').addClass('dropdown-menu search-results');
+        }
+
+      })
+        .autocomplete('instance')._renderItem = function (ul, item) {
+          return $('<li>')
+            .append('<div>' + item.value + '</div>')
+            .appendTo(ul);
+        };
+
+    });
+  </script> -->
+
+
+
+    </body>
 </html>

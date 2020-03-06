@@ -1,0 +1,106 @@
+@import 'reset.scss';
+// /* SmoothStone-Regular */
+
+@font-face {
+    font-family: "SmoothStone";
+    src: url("../fonts/SmoothStone-Regular.otf") format("otf"),
+         url("../fonts/SmoothStone-Regular.woff") format("woff"),
+         url("../fonts/SmoothStone-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+};
+
+
+//------------------ Index.HTML 
+
+html {
+  margin: 20px;
+  display: flex;
+}
+
+.macro-pie-container {
+  margin-top: 50px;
+  width: 400px;
+  height: 600px;
+  padding-left: 50px;
+  display: inline-block
+}
+
+.micro-bar-container {
+  width: 850px;
+  height: 700px;
+}
+
+.macro-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+//------------------ Pie Chart 
+
+#pie-k, #pie-p, #pie-f, #pie-c {
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#pie-chart svg {
+  display: flex;
+  justify-content: center;
+}
+
+#macro-pie-title {
+  font-family: "SmoothStone"; 
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+  padding-left: 14px;
+}
+
+#pie-chart {
+  font-family: "SmoothStone"; 
+  letter-spacing: 2px;
+} 
+
+
+//------------------ Bar Chart 
+
+#bar-chart .micro-categories, .micro-title {
+  font-family: "SmoothStone"; 
+  font-size: 40px;
+  letter-spacing: 5px;
+} 
+
+#bar-chart .label-grams, .label-milligrams {
+  font-family: "SmoothStone"; 
+  font-size: 26px;
+  letter-spacing: 5px;
+} 
+
+
+//------------------ Nutrition Facts Label
+
+
+.nutrition-facts-container {
+  font-size: small;
+  line-height: 1.5;
+  margin: 30px;
+  padding: 10px 5px;
+  border: 1px solid black;
+  width: 280px;
+}
+
+.nutrition-facts-title {
+  font-weight: bold;
+  font-size: 30px;
+  border-bottom: 8px solid black;
+  width: 99%;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+}
+
+.small-info {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+}
