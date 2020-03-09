@@ -9,11 +9,11 @@
       <!-- <link href='https://fonts.googleapis.com/css?family=Euphoria+Script&display=swap' rel='stylesheet'> -->
       <link rel='stylesheet' href='dist/main.css'>
 
-        <script src='https://github.com/dansteryoo/seefude.com/blob/master/lib/d3.v4.js'></script>
-        <!-- <script src='https://github.com/dansteryoo/seefude.com/blob/master/lib/fatsecret.js' charset='utf-8'></script> -->
-        <script src='https://github.com/dansteryoo/seefude.com/blob/master/lib/pie_chart.js' charset='utf-8'></script>
-        <script src='https://github.com/dansteryoo/seefude.com/blob/master/lib/bar_chart.js' charset='utf-8'></script>
-        <!-- <script src='dist/main.js' charset='utf-8'></script> -->
+        <script src='/lib/d3.v4.js'></script>
+        <script src='/lib/fatsecret.js' charset='utf-8'></script>
+        <script src='/lib/pie_chart.js' charset='utf-8'></script>
+        <script src='/lib/bar_chart.js' charset='utf-8'></script>
+        <script src='dist/main.js' charset='utf-8'></script>
 
 
     <title>SeeFude.com</title>
@@ -25,8 +25,7 @@
   </div>
 
     <div class='site-description-container'>
-      <div class='site-description-title'>Tracking daily nutritional values</div>
-        <div class='site-description-info'>A fun and interactive way to track nutritional values of your daily food intake!</div>
+      <p>Where smarter eating leads to healither living.</p>
     </div>
 
 
@@ -34,7 +33,7 @@
 
 
 
-  <div id='food_search' class='fatsecret_container' style='width: 500px'>
+  <div id='food_search' class='fatsecret_container'>
   </div>
 <!-- 
     <div class='search-container'>
@@ -43,6 +42,123 @@
          <span class='search-span glyphicon glyphicon-search'></span>
       </form>
     </div> -->
+
+    <div class='graph-container'>
+
+    <!---------------------- Nutrition Facts Main ---------------------->
+    
+    <div class='nutrition-facts-div'>
+      <div class='nutrition-facts-container'>
+        <h2 class='nutrition-facts-title'>Nutrition Facts</h2>
+    
+        <table class='nutrition-facts-table'>
+          <thead>
+            <tr>
+              <th class='small-info'>
+                Amount Per Meal
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Calories
+                <span id='total-calories'> 2000 kcal</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class='daily-total'>
+                Total Meal Value*
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Total Fat
+                <span id='total-fat'>14g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Saturated Fat
+                <span id='total-saturated-fat'>14g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Cholesterol
+                <span id='total-cholesterol'>55mg</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Sodium
+                <span id='total-sodium'>1000mg</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Potassium
+                <span id='total-potassium'>55mg</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Total Carbohydrate
+                <span id='total-carbohydrate-fiber'>100g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Dietary Fiber
+                <span id='total-dietary-fiber'>100g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Sugars
+                <span id='total-sugar'>100g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title-bold'>
+                Total Protein
+                <span id='total-protein'>100g</span>
+              </th>
+            </tr>
+    
+            <!---------------------- Nutrition Facts Micros ---------------------->
+    
+            <tr>
+              <th class='each-title'>
+                Calcium
+                <span id='total-calcium'>14g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Iron
+                <span id='total-iron'>3g</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Vitamin A
+                <span id='total-vitamin-A'>1000mg</span>
+              </th>
+            </tr>
+            <tr>
+              <th class='each-title'>
+                Vitamin C
+                <span id='total-vitamin-C'>100g</span>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        <div class='daily-values'>
+          * Your daily values may be higher or lower depending on your calorie needs.
+        </div>
+      </div>
+    </div>
 
 <!---------------------- Macros ---------------------->
 
@@ -62,133 +178,24 @@
     </div>
 
 
-<section class='nutrition-facts-container'>
-  <h2 class='nutrition-facts-title'>Nutrition Facts</h2>
-  <!---------------------- Nutrition Facts Main ---------------------->
-
-  <table class='nutrition-facts-table'>
-    <thead>
-      <tr>
-        <th class='small-info'>
-          Amount Per Meal
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Calories
-          <span id='total-calories'> 2000 kcal</span>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th class='daily-total'>
-          Total Meal Value*
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Total Fat
-          <span id='total-fat'>14g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Saturated Fat
-          <span id='total-saturated-fat'>14g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Cholesterol
-          <span id='total-cholesterol'>55mg</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Sodium
-          <span id='total-sodium'>1000mg</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Potassium
-          <span id='total-potassium'>55mg</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Total Carbohydrate
-          <span id='total-carbohydrate-fiber'>100g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Dietary Fiber
-          <span id='total-dietary-fiber'>100g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Sugars
-          <span id='total-sugar'>100g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title-bold'>
-          Total Protein
-          <span id='total-protein'>100g</span>
-        </th>
-      </tr>
-
-  <!---------------------- Nutrition Facts Micros ---------------------->
-
-      <tr>
-        <th class='each-title'>
-          Calcium
-          <span id='total-calcium'>14g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Iron
-          <span id='total-iron'>3g</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Vitamin A
-          <span id='total-vitamin-A'>1000mg</span>
-        </th>
-      </tr>
-      <tr>
-        <th class='each-title'>
-          Vitamin C
-          <span id='total-vitamin-C'>100g</span>
-        </th>
-      </tr>
-    </tbody>
-  </table>
-    <div class='daily-values'>
-      * Your daily values may be higher or lower depending on your calorie needs.
-    </div>
-</section>
-
 
 <!---------------------- Micros ---------------------->
 
     <div class='micro-bar-container'>
-        <svg id='bar-chart' width='820px' height='600px'></svg>
+        <svg id='bar-chart' width='820px' height='560px'></svg>
     </div>
+
+<!---------------------- Graph Container Ending Div ---------------------->
+</div>
 
 
 <!---------------------- Scripts ---------------------->
    
-<!-- 
+
   <script>
     fatsecret.setContainer('food_search');
     fatsecret.setCanvas('foods.search');
-  </script> -->
+  </script>
   
 <!-- 
   <script>
