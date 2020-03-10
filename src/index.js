@@ -1,5 +1,7 @@
 import './styles/main.scss'
 
+<script src='/lib/pie_chart.js' charset='utf-8'></script>
+<script src='/lib/bar_chart.js' charset='utf-8'></script>
 
 // import axios from "axios";
 
