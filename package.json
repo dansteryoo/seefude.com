@@ -17,7 +17,7 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "watch": "webpack --watch --config webpack.dev.js",
     "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize",
-    "postinstall": "webpack-dev-server --config webpack.dev.js"
+    "postinstall": "webpack --config webpack.prod.js  --optimize-minimize"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
