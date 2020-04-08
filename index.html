@@ -14,35 +14,23 @@
         <script src='/lib/bar_chart.js'></script>
         <script src='dist/main.js' charset='utf-8'></script>
 
-
     <title>SeeFude.com</title>
   </head>
 
 <body>
-  <div class='header'>
+<div class="container">
+
+  <!---------------------- Header with Search ---------------------->
+  
+    <div class='header'>
       <p>Welcome to SeeFude.com</p>
-  </div>
-
-    <div class='site-description-container'>
-      <p>Where smarter eating leads to healither living.</p>
+      <div class='site-description-container'>
+        <p>Where smarter eating leads to healither living.</p>
+      </div>
     </div>
-
-
-<!---------------------- Input Form ---------------------->
-
-
-
-  <div id='food_search' class='fatsecret_container'>
-  </div>
-<!-- 
-    <div class='search-container'>
-        <form method='GET' action='{{site.baseurl}}/search-results.html'>
-        <input type='text' id='search' class='search-input form-control' name='query'>
-         <span class='search-span glyphicon glyphicon-search'></span>
-      </form>
-    </div> -->
-
-    <div class='graph-container'>
+    
+    <div id='food_search' class='fatsecret_container'>
+    </div>
 
     <!---------------------- Nutrition Facts Main ---------------------->
     
@@ -159,37 +147,27 @@
       </div>
     </div>
 
-<!---------------------- Macros ---------------------->
+<!---------------------- Macros Pie Chart ---------------------->
 
-  <div class='macro-pie-container'>
-        <p id='macro-pie-title'>Total Macros</p>
+<div class='macro-pie-container'>
+  <p id='macro-pie-title'>Total Macros</p>
 
-      <div class='macro-pie-chart'>
-        <svg id='pie-chart' width='400px' height='400px'></svg>
-      </div>
-
-    <div class='macro-btn-container'>
-        <button id='pie-k' value='Kcalories'>Kcalories</button>
-        <button id='pie-p' value='Protein'>Protein</button>
-        <button id='pie-f' value='Fats'>Fats</button>
-        <button id='pie-c' value='Carbs'>Carbs</button>
-      </div>
+  <div class='macro-pie-chart'>
+    <div id='pie-chart'>
     </div>
-
-
-
-<!---------------------- Micros ---------------------->
-
-    <div class='micro-bar-container'>
-        <svg id='bar-chart' width='820px' height='560px'></svg>
-    </div>
-
-<!---------------------- Graph Container Ending Div ---------------------->
+  </div>
 </div>
 
+<!---------------------- Micros Bar Chart ---------------------->
+  
+  <div id='micro-bar-container'>
+    <div id='bar-chart'>
+    </div>
+  </div>
+
+</div>
 
 <!---------------------- Scripts ---------------------->
-   
 
   <script>
     fatsecret.setContainer('food_search');
