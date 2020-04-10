@@ -119,8 +119,8 @@ body {
 
 line#limit {
   stroke: #FED966;
-  stroke-width: 3;
-  stroke-dasharray: 3 6;
+  stroke-width: 2;
+  stroke-dasharray: 3;
 }
 
 .grid path {
@@ -136,6 +136,8 @@ line#limit {
 text.divergence { 
   font-size: 14px;
   fill: red;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   font-family: Arial, Helvetica, sans-serif;
 }
 
