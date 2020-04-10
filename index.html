@@ -8,16 +8,16 @@
 
       <link rel='stylesheet' href='dist/main.css'>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js"></script>
-        <script src="https://platform.fatsecret.com/js?key=b9f4d796964048b293a62e8b2dfc280d"></script>
-        <script src='/lib/pie_chart.js'></script>
-        <script src='/lib/bar_chart.js'></script>
-        <script src='dist/main.js' charset='utf-8'></script>
-
     <title>SeeFude.com</title>
   </head>
 
 <body>
+
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js"></script>>
+          <script src='/lib/pie_chart.js'></script>
+          <script src='/lib/bar_chart.js'></script>
+          <script src='dist/main.js' charset='utf-8'></script>
+          
 <div class="container">
 
   <!---------------------- Header with Search ---------------------->
@@ -182,36 +182,6 @@
 
 </div>
 <!---------------------- Scripts ---------------------->
-
-  <script>
-    fatsecret.setContainer('food_search');
-    fatsecret.setCanvas('foods.search');
-  </script>
-  
-<!-- 
-  <script>
-    $('document').ready(function () {
-      $('#search').autocomplete({
-        source: siteIndex,
-        minLength: 2,
-        select: function (event, ui) {
-          window.location.href = window.location.origin + '{{site.baseurl}}' + '/' + ui.item.url.replace('.md', '.html');
-        },
-        open: function (event, ui) {
-          $('.ui-autocomplete').css('z-index', 10000);
-          $('.ui-autocomplete').addClass('dropdown-menu search-results');
-        }
-
-      })
-        .autocomplete('instance')._renderItem = function (ul, item) {
-          return $('<li>')
-            .append('<div>' + item.value + '</div>')
-            .appendTo(ul);
-        };
-
-    });
-  </script> -->
-
 
 
     </body>
