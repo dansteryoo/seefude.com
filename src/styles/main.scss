@@ -47,9 +47,9 @@ body {
     margin: 50px auto;
 
   p {
-    font-family: 'SmoothStone'; 
-    font-size: 50px;
-    letter-spacing: 0.2em;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 45px;
+    letter-spacing: 0.1em;
     align-content: center;
     text-align: center;
   }
@@ -59,13 +59,13 @@ body {
     margin: auto;
 
   p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-family: 'SmoothStone'; 
+    font-size: 24px;
     font-weight: bold;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.25em;
     align-content: center;
     text-align: center;
-    margin-top: 35px;
+    margin-top: 20px;
   }
 }
 
@@ -88,7 +88,7 @@ body {
     font-size: 40px;
     letter-spacing: 0.1em;
     text-align: center;
-    padding-bottom: 41px;
+    padding-bottom: 80px;
   }
 
   #pie-chart {
