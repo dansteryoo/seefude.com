@@ -24,19 +24,18 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-template-rows: auto;
+  grid-template-columns: 400px auto;
+  grid-template-rows: 1;
+  height: 100%;
 }
 
 .top-container {
-  grid-column-start: 1;
-  grid-column-end: 21;
-  grid-row: 1;
-  border-bottom: 1px solid black;
-  display: inline-flex;
-  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
   background-color: black;
   color: white;
+  grid-column-start: 1;
+  height: 100vh;
 }
 
 .header {
@@ -60,121 +59,31 @@ body {
 
   p {
     font-family: 'SmoothStone'; 
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     letter-spacing: 0.25em;
     align-content: center;
     text-align: center;
     margin-top: 20px;
+    padding: 0 20px;
   }
 }
 
-
-//------------------ Pie Chart 
-
-.macro-pie-container {
-  grid-column-start: 6;
-  grid-column-end: 10;
-  grid-row: 2;
-  margin: auto;
-
-  #pie-chart svg {
-    display: flex;
-    justify-content: center;
-  }
-
-  #macro-pie-title {
-    font-family: 'SmoothStone';
-    font-size: 40px;
-    letter-spacing: 0.1em;
-    text-align: center;
-    padding-bottom: 80px;
-  }
-
-  #pie-chart {
-    font-family: 'SmoothStone'; 
-    letter-spacing: 0.1em;
-  } 
-}
-
-
-//------------------ Bar Chart 
-
-#micro-bar-container {
-  grid-column-start: 11;
-  grid-column-end: 18;
-  grid-row: 2;
-  text-align: center;
-  padding-top: 62px;
-  margin: auto;
-}
-
-#bar-char {
-  padding: 0;
-}
-
-.bar {
-  fill: #80cbc4;
-}
-
-line#limit {
-  stroke: #FED966;
-  stroke-width: 2;
-  stroke-dasharray: 3;
-}
-
-.grid path {
-  stroke-width: 0;
-}
-
-.grid .tick line {
-  stroke: #9FAAAE;
-  stroke-opacity: 0.3;
-}
-
-//------ text on hover
-text.divergence { 
-  font-size: 14px;
-  fill: red;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-//------ text on bars
-text.value { 
-  font-size: 14px;
-  font-weight: 600;
-  fill: purple;
-  letter-spacing: 0.05em;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-#bar-chart .micro-categories, .micro-title {
-  font-size: 40px;
-  letter-spacing: 5px;
-} 
-
-#bar-chart .label-grams, .label-milligrams {
-  font-size: 26px;
-  letter-spacing: 5px;
-} 
 
 //------------------ Nutrition Facts Label
 
 .nutrition-facts-div {
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row: 2;
-  width: 250px;
-  margin: auto;
+  width: 300px;
+  margin: 50px auto;
 }
 
 .nutrition-facts-container {
-  line-height: 1.1;
-  padding: 10px;
+  line-height: 1.4;
+  padding: 15px;
   border: 1px solid black;
-  margin-top: 25px;
+  background-color: white;
+  color: black;
+  margin-top: 60px;
 }
 
 .nutrition-facts-title {
@@ -251,32 +160,175 @@ text.value {
   text-align: left;
 }
 
+//------------------ Right Side Container 
+
+.right-side-container{
+  flex-direction: column;
+}
+
+.charts {
+  display: inline-flex;
+  width: 100%;
+  padding: 0;
+  margin: auto;
+  justify-content: center;
+  justify-self: center
+  ;
+}
+
+//------------------ Pie Chart 
+
+.macro-pie-container {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  margin: 160px 100px 0;
+
+  #pie-chart svg {
+    display: flex;
+    justify-content: center;
+  }
+
+  #macro-pie-title {
+    font-family: 'SmoothStone';
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  #pie-chart {
+    font-family: 'SmoothStone'; 
+    letter-spacing: 0.1em;
+  } 
+}
+
+
+//------------------ Bar Chart 
+
+.micro-bar-container {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  text-align: center;
+  padding-top: 60px;
+  margin: 100px 100px 0;
+
+    #micro-bar-title {
+    font-family: 'SmoothStone';
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+}
+
+#bar-char {
+  padding: 0;
+}
+
+.bar {
+  fill: #72c6ed;
+}
+
+line#limit {
+  stroke: #FED966;
+  stroke-width: 2;
+  stroke-dasharray: 3;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: gray;
+  stroke-opacity: 0.3;
+}
+
+//------ text on hover
+text.divergence { 
+  font-size: 12px;
+  fill: purple;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-family: "roboto" sans-serif;
+}
+
+//------ text on bars
+text.value { 
+  font-size: 12px;
+  font-weight: 600;
+  fill: blue;
+  letter-spacing: 0.05em;
+  font-family: "roboto" sans-serif;
+}
+
+#bar-chart .micro-categories, .micro-title {
+  font-size: 40px;
+  letter-spacing: 5px;
+} 
+
+#bar-chart .label-grams, .label-milligrams {
+  font-size: 26px;
+  letter-spacing: 5px;
+} 
+
 //------------------ Fude Checkbox
 
-.fude-container {
+.fude-button-container {
+  flex-direction: column;
+}
+
+.fude-buttons {
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+    button {
+    font-family: 'SmoothStone'; 
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    background-color: burlywood;
+    border: 2px solid black; 
+    border-radius: 40px;
+    padding: 8px 16px;
+    margin: 0 10px;
+    outline: none;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: burlywood;
+    border: 2px solid black; 
+    opacity: 50%;
+  }
+}
+
+.reset-button {
   width: 100%;
-  height: 100px;
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 
-.fude-buttons button {
-  font-family: 'SmoothStone'; 
-  font-size: 20px;
-  letter-spacing: 0.15em;
-  background-color: burlywood;
-  border: 2px solid black; 
-  border-radius: 40px;
-  padding: 5px 20px;
-  margin: 0 10px;
-  z-index: 2px;
-  outline: none;
-}
+    #reset {
+    font-family: 'SmoothStone'; 
+    font-size: 20px;
+    letter-spacing: 0.15em;
+    background-color: #72c6ed;
+    border: 2px solid blue; 
+    border-radius: 40px;
+    color: blue;
+    padding: 5px 20px;
+    margin: 0 10px;
+    outline: none;
+  }
 
-.fude-buttons button:hover {
-  cursor: pointer;
-  color: burlywood;
-  background-color: white;
-  border: 2px solid burlywood; 
+  #reset:hover {
+    cursor: pointer;
+    color: blue;
+    background-color: #72c6ed;
+    border: 2px solid blue; 
+    opacity: 50%;
+  }
 }

@@ -8,7 +8,8 @@
     
           <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.js"></script>
           <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-
+          <script src='/lib/pie_chart.js'></script>
+          <script src='/lib/bar_chart.js'></script>
           <script src='dist/main.js' charset='utf-8'></script>
       <link rel='stylesheet' href='dist/main.css'>
 
@@ -28,7 +29,6 @@
       </div>
     </div>
 
-  </div>
     <!---------------------- Nutrition Facts Main ---------------------->
     
     <div class='nutrition-facts-div'>
@@ -144,29 +144,37 @@
       </div>
     </div>
 
+        <div class="reset-button">
+          <button id='reset' value="reset">Reset</button>
+        </div>
+
+  </div>
+    
 <!---------------------- Macros Pie Chart ---------------------->
+<div class='right-side-container'>
 
-<div class='macro-pie-container'>
-  <p id='macro-pie-title'>Total Macros</p>
+  <div class="charts">
+  <div class='macro-pie-container'>
+    <p id='macro-pie-title'>Total Macros</p>
 
-  <div class='macro-pie-chart'>
-    <div id='pie-chart'>
+    <div class='macro-pie-chart'>
+      <div id='pie-chart'>
+      </div>
     </div>
   </div>
-</div>
 
 <!---------------------- Micros Bar Chart ---------------------->
   
-  <div id='micro-bar-container'>
+  <div class='micro-bar-container'>
+      <p id='micro-bar-title'>Total Micronutrients</p>
     <div id='bar-chart'>
     </div>
   </div>
 
 </div>
-
-<!---------------------- Fude Buttons ---------------------->
-
-<div class="fude-container">
+  <!---------------------- Fude Buttons ---------------------->
+  
+  <div class='fude-button-container'>
 
     <div class="fude-buttons">
       <button id='pizza' value="pizza">Pizza Slice</button>
@@ -179,9 +187,12 @@
       <button id='cookie' value="cookie">Chocolate Chip</button>
     </div>
 
-</div>
-<!---------------------- Scripts ---------------------->
+  </div>
 
+</div>
+
+<!---------------------- Scripts ---------------------->
+</div>
 
     </body>
 </html>
