@@ -1,5 +1,4 @@
 @import 'reset.scss';
-// /* SmoothStone-Regular */
 
 @font-face {
     font-family: 'SmoothStone';
@@ -9,7 +8,6 @@
     font-weight: 400;
     font-style: normal;
 };
-
 
 //------------------ Index.HTML 
 
@@ -193,7 +191,7 @@ body {
     font-size: 40px;
     letter-spacing: 0.1em;
     text-align: center;
-    padding-bottom: 80px;
+    padding-bottom: 45px;
   }
 
   #pie-chart {
@@ -210,7 +208,7 @@ body {
   grid-row-start: 1;
   text-align: center;
   padding-top: 60px;
-  margin: 100px 100px 0;
+  margin: 100px 0 0;
 
     #micro-bar-title {
     font-family: 'SmoothStone';
@@ -284,14 +282,13 @@ text.value {
   align-items: center;
 
     button {
-    font-family: 'SmoothStone'; 
-    font-size: 20px;
+    font-family: 'SmoothStone';
+    font-size: 16px;
     letter-spacing: 0.15em;
     background-color: burlywood;
-    border: 2px solid black; 
+    border: 2px solid black;
     border-radius: 40px;
     padding: 8px 16px;
-    margin: 0 10px;
     outline: none;
   }
 
@@ -315,10 +312,10 @@ text.value {
     font-family: 'SmoothStone'; 
     font-size: 20px;
     letter-spacing: 0.15em;
-    background-color: #72c6ed;
-    border: 2px solid blue; 
+    background-color: white;
+    border: 2px solid black; 
     border-radius: 40px;
-    color: blue;
+    color: black;
     padding: 5px 20px;
     margin: 0 10px;
     outline: none;
@@ -326,9 +323,9 @@ text.value {
 
   #reset:hover {
     cursor: pointer;
-    color: blue;
-    background-color: #72c6ed;
-    border: 2px solid blue; 
+    color: black;
+    background-color: white;
+    border: 2px solid black; 
     opacity: 50%;
   }
 }
