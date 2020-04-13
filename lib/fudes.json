@@ -1,35 +1,189 @@
 [{
-    "food": {
-        "food_id": "4384",
-        "food_name": "Plain French Toast",
-        "food_type": "Generic",
-        "food_url": "http:\/\/www.fatsecret.com\/calories-nutrition\/generic\/french-toast-plain",
+    "reset": {
         "servings": {
             "serving": {
-                "calcium": "8",
-                "calories": "3809",
-                "carbohydrate": "200",
-                "cholesterol": "90",
-                "fat": "65",
-                "fiber": "0.8",
+                "calcium": "0",
+                "calories": "0",
+                "carbohydrate": "0",
+                "cholesterol": "0",
+                "fat": "0",
+                "fiber": "0",
+                "iron": "0",
+                "potassium": "0",
+                "protein": "0",
+                "saturated_fat": "0",
+                "sodium": "0",
+                "sugar": "0",
+                "vitamin_a": "0",
+                "vitamin_c": "0"
+            }
+        }
+    }
+},{
+    "pizza": {
+        "servings": {
+            "serving": {
+                "calcium": "18",
+                "calories": "0",
+                "carbohydrate": "26",
+                "cholesterol": "21",
+                "fat": "10",
+                "fiber": "1.6",
                 "iron": "9",
-                "measurement_description": "regular slice",
-                "metric_serving_amount": "65.000",
-                "metric_serving_unit": "g",
-                "monounsaturated_fat": "2.298",
-                "number_of_units": "1.000",
-                "polyunsaturated_fat": "1.578",
+                "potassium": "138",
+                "protein": "10.6",
+                "saturated_fat": "4.30",
+                "sodium": "462",
+                "sugar": "3.06",
+                "vitamin_a": "6",
+                "vitamin_c": "0"
+            }
+        }
+    }
+},{
+    "pho": {
+        "servings": {
+            "serving": {
+                "calcium": "6",
+                "calories": "0",
+                "carbohydrate": "33",
+                "cholesterol": "78",
+                "fat": "7.5",
+                "fiber": "2",
+                "iron": "20",
+                "potassium": "610",
+                "protein": "34.70",
+                "saturated_fat": "2.8",
+                "sodium": "1340",
+                "sugar": "2.10",
+                "vitamin_a": "8",
+                "vitamin_c": "14"
+            }
+        }
+    }
+},{
+    "ramen": {
+        "servings": {
+            "serving": {
+                "calcium": "11",
+                "calories": "0",
+                "carbohydrate": "75",
+                "cholesterol": "150",
+                "fat": "22",
+                "fiber": "3",
+                "iron": "28",
+                "potassium": "157",
+                "protein": "26",
+                "saturated_fat": "4.7",
+                "sodium": "2250",
+                "sugar": "4.9",
+                "vitamin_a": "10",
+                "vitamin_c": "10"
+            }
+        }
+    }
+},{
+    "avacado": {
+        "servings": {
+            "serving": {
+                "calcium": "2",
+                "calories": "0",
+                "carbohydrate": "17.15",
+                "cholesterol": "0",
+                "fat": "29.5",
+                "fiber": "13.5",
+                "iron": "6",
+                "potassium": "975",
+                "protein": "4",
+                "saturated_fat": "4.273",
+                "sodium": "14",
+                "sugar": "1.33",
+                "vitamin_a": "6",
+                "vitamin_c": "34"
+            }
+        }
+    }
+},{
+    "fries": {
+        "servings": {
+            "serving": {
+                "calcium": "2",
+                "calories": "0",
+                "carbohydrate": "63.43",
+                "cholesterol": "0",
+                "fat": "28.78",
+                "fiber": "6",
+                "iron": "13",
+                "potassium": "935",
+                "protein": "6.35",
+                "saturated_fat": "6.817",
+                "sodium": "326",
+                "sugar": "1.15",
+                "vitamin_a": "0",
+                "vitamin_c": "8"
+            }
+        }
+    }
+},{
+    "beer": {
+        "servings": {
+            "serving": {
+                "calcium": "0",
+                "calories": "0",
+                "carbohydrate": "21.5",
+                "cholesterol": "0",
+                "fat": "0",
+                "fiber": "0",
+                "iron": "0",
+                "potassium": "0",
+                "protein": "0",
+                "saturated_fat": "0",
+                "sodium": "0",
+                "sugar": "0",
+                "vitamin_a": "0",
+                "vitamin_c": "0"
+            }
+        }
+    }
+},{
+    "icecream": {
+        "servings": {
+            "serving": {
+                "calcium": "0",
+                "calories": "0",
+                "carbohydrate": "0",
+                "cholesterol": "0",
+                "fat": "0",
+                "fiber": "0",
+                "iron": "0",
                 "potassium": "80",
                 "protein": "200",
                 "saturated_fat": "1.585",
-                "serving_description": "regular slice",
-                "serving_id": "16758",
-                "serving_url": "http:\/\/www.fatsecret.com\/calories-nutrition\/generic\/french-toast-plain?portionid=16758&portionamount=1.000",
                 "sodium": "320",
                 "sugar": "4.87",
-                "trans_fat": "0",
-                "vitamin_a": "4",
-                "vitamin_c": "4"
+                "vitamin_a": "0",
+                "vitamin_c": "0"
+            }
+        }
+    }
+},{
+    "cookie": {
+        "servings": {
+            "serving": {
+                "calcium": "0",
+                "calories": "0",
+                "carbohydrate": "0",
+                "cholesterol": "0",
+                "fat": "0",
+                "fiber": "0",
+                "iron": "0",
+                "potassium": "80",
+                "protein": "200",
+                "saturated_fat": "1.585",
+                "sodium": "320",
+                "sugar": "4.87",
+                "vitamin_a": "0",
+                "vitamin_c": "0"
             }
         }
     }
