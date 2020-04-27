@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const grams = ['saturated_fat', 'fiber', 'sugar']
             const milligrams = ['cholesterol', 'sodium', 'potassium']
             const percentage = ['vitamin_a', 'vitamin_c', 'calcium', 'iron']
-            debugger
             
+
         const totalCals = document.getElementById('total-calories')
         const totalFat = document.getElementById('total-fat')
         const totalSatFat = document.getElementById('total-saturated-fat')
@@ -142,52 +142,50 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const pizza = document.getElementById('pizza')
-    pizza.onclick = () => { 
-        updateFacts(pizza.value)
-        update(pizza.value)
+    pizza.onclick = (data) => { 
+        handleClick(data.target.value)
     };
 
     const pho = document.getElementById('pho')
-    pho.onclick = () => { 
-        updateFacts(pho.value)
-        update(pho.value) 
+    pho.onclick = (data) => {
+        handleClick(data.target.value)
     };
 
     const ramen = document.getElementById('ramen')
-    ramen.onclick = () => { 
-        updateFacts(ramen.value)
-        update(ramen.value) 
+    ramen.onclick = (data) => {
+        handleClick(data.target.value)
     };
 
     const avacado = document.getElementById('avacado')
-    avacado.onclick = () => {
-        updateFacts(avacado.value) 
-        update(avacado.value) 
+    avacado.onclick = (data) => {
+        handleClick(data.target.value)
     };
 
     const fries = document.getElementById('fries')
-    fries.onclick = () => {
-        updateFacts(fries.value) 
-        update(fries.value) 
+    fries.onclick = (data) => {
+        handleClick(data.target.value)
     };
 
     const beer = document.getElementById('beer')
-    beer.onclick = () => {
-        updateFacts(beer.value) 
-        update(beer.value) 
+    beer.onclick = () => (data) => {
+        handleClick(data.target.value)
     };
 
     const icecream = document.getElementById('icecream')
-    icecream.onclick = () => {
-        updateFacts(icecream.value) 
-        update(icecream.value) 
+    icecream.onclick = (data) => {
+        handleClick(data.target.value)
     };
 
     const cookie = document.getElementById('cookie')
-    cookie.onclick = () => {
-        updateFacts(cookie.value) 
-        update(cookie.value) 
+    cookie.onclick = (data) => {
+        handleClick(data.target.value)
     };
+
+    function handleClick(data) {
+        removeBars()
+        updateFacts(data)
+        update(data)
+    }
 
     function removeBars() {
         chart.selectAll('rect').remove()
