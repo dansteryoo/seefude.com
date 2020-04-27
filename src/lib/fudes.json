@@ -149,19 +149,19 @@
     "icecream": {
         "servings": {
             "serving": {
-                "calcium": "0",
+                "calcium": "10",
                 "calories": "0",
-                "carbohydrate": "0",
-                "cholesterol": "0",
-                "fat": "0",
+                "carbohydrate": "31",
+                "cholesterol": "45",
+                "fat": "8",
                 "fiber": "0",
                 "iron": "0",
                 "potassium": "80",
-                "protein": "200",
-                "saturated_fat": "1.585",
-                "sodium": "320",
-                "sugar": "4.87",
-                "vitamin_a": "0",
+                "protein": "4",
+                "saturated_fat": "5",
+                "sodium": "45",
+                "sugar": "28",
+                "vitamin_a": "8",
                 "vitamin_c": "0"
             }
         }
@@ -172,17 +172,17 @@
             "serving": {
                 "calcium": "0",
                 "calories": "0",
-                "carbohydrate": "0",
+                "carbohydrate": "25",
                 "cholesterol": "0",
                 "fat": "0",
                 "fiber": "0",
-                "iron": "0",
+                "iron": "6",
                 "potassium": "80",
-                "protein": "200",
-                "saturated_fat": "1.585",
-                "sodium": "320",
-                "sugar": "4.87",
-                "vitamin_a": "0",
+                "protein": "2",
+                "saturated_fat": "4.5",
+                "sodium": "150",
+                "sugar": "12",
+                "vitamin_a": "4",
                 "vitamin_c": "0"
             }
         }

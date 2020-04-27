@@ -85,7 +85,7 @@ body {
 }
 
 .nutrition-facts-title {
-  font-weight: bold;
+    font-family: arial;
   font-size: 30px;
   border-bottom: 8px solid black;
   width: 99%;
@@ -109,7 +109,7 @@ body {
   font-weight: normal;
   font-size: 11px;
   border-top: 1px solid black;
-  margin: 5px 5px 0;
+  margin: 0 5px 0;
   padding: 5px 0 0;
 }
 
@@ -129,8 +129,8 @@ body {
 #total-cholesterol,
 #total-sodium,
 #total-potassium,
-#total-carbohydrate-fiber,
-#total-dietary-fiber,
+#total-carbohydrate,
+#total-fiber,
 #total-sugar,
 #total-protein,
 #total-calcium, 

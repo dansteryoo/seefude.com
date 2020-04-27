@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .padding(0.3)
 
     const yScaleLeft = d3.scaleLinear()
-        .domain([0, 150]).nice()
+        .domain([0, 100]).nice()
         .range([height, 0])
 
     const yScaleRight = d3.scaleLinear()
-        .domain([0, 150]).nice()
+        .domain([0, 100]).nice()
         .range([height, 0])
 
     const makeYLines = () => d3.axisLeft()
@@ -59,38 +59,147 @@ document.addEventListener("DOMContentLoaded", () => {
             .tickFormat('')
         )
 
+    //--------------- Nutrition Facts
+
+    function updateFacts(fude) {
+
+        d3.json("./src/lib/fudes.json").then(function (data) {
+            let foodData = data.filter(ele => ele[fude])
+
+            const nutritionalInfo = foodData[0][fude].servings.serving;
+            const grams = ['saturated_fat', 'fiber', 'sugar']
+            const milligrams = ['cholesterol', 'sodium', 'potassium']
+            const percentage = ['vitamin_a', 'vitamin_c', 'calcium', 'iron']
+            debugger
+            
+        const totalCals = document.getElementById('total-calories')
+        const totalFat = document.getElementById('total-fat')
+        const totalSatFat = document.getElementById('total-saturated-fat')
+        const totalChol = document.getElementById('total-cholesterol')
+        const totalSodium = document.getElementById('total-sodium')
+        const totalPot = document.getElementById('total-potassium')
+        const totalCarbs = document.getElementById('total-carbohydrate')
+        const totalFiber = document.getElementById('total-fiber')
+        const totalSugar = document.getElementById('total-sugar')
+        const totalProtein = document.getElementById('total-protein')
+        const totalCalium = document.getElementById('total-calcium')
+        const totalIron = document.getElementById('total-iron')
+        const totalVA = document.getElementById('total-vitamin-A')
+        const totalVC = document.getElementById('total-vitamin-C')
+
+        if (fude !== reset) {
+
+            //--------------- Total Kcals
+            totalCals.innerText = (
+                Math.ceil((nutritionalInfo.protein * 4) +
+                    (nutritionalInfo.fat * 9) +
+                    (nutritionalInfo.carbohydrate * 4)) + " kCals"
+            )
+
+            //--------------- Total g/mg
+            totalFat.innerText = Math.ceil(nutritionalInfo.fat) + "g"
+            totalSatFat.innerText = Math.ceil(nutritionalInfo.saturated_fat) + "g"
+            totalChol.innerText = Math.ceil(nutritionalInfo.cholesterol) + "mg"
+            totalSodium.innerText = Math.ceil(nutritionalInfo.sodium) + "mg"
+            totalPot.innerText = Math.ceil(nutritionalInfo.potassium) + "mg"
+            totalCarbs.innerText = Math.ceil(nutritionalInfo.carbohydrate) + "g"
+            totalFiber.innerText = Math.ceil(nutritionalInfo.fiber) + "g"
+            totalSugar.innerText = Math.ceil(nutritionalInfo.sugar) + "g"
+            totalProtein.innerText = Math.ceil(nutritionalInfo.protein) + "g"
+
+            //--------------- Total %
+            totalCalium.innerText = Math.ceil(nutritionalInfo.calcium) + "%"
+            totalIron.innerText = Math.ceil(nutritionalInfo.iron) + "%"
+            totalVA.innerText = Math.ceil(nutritionalInfo.vitamin_a) + "%"
+            totalVC.innerText = Math.ceil(nutritionalInfo.vitamin_c) + "%"
+        } else {
+            //--------------- Reset Kcals
+            totalCals.innerText = "0 kCals"
+
+            totalFat.innerText = "0g"
+            totalSatFat.innerText = "0g"
+            totalChol.innerText = "0mg"
+            totalSodium.innerText = "0mg"
+            totalPot.innerText = "0mg"
+            totalCarbs.innerText = "0g"
+            totalFiber.innerText = "0g"
+            totalSugar.innerText = "0g"
+            totalProtein.innerText = "0g"
+
+            totalCalium.innerText = "0%"
+            totalIron.innerText = "0%"
+            totalVA.innerText = "0%"
+            totalVC.innerText = "0%"
+        }
+
+    })}
     //--------------- Bar Chart Data Bars
 
     const reset = document.getElementById('reset')
-    reset.onclick = () => { update(reset.value) }
+    reset.onclick = () => { 
+        removeBars()
+        updateFacts(reset.value)
+    };
 
     const pizza = document.getElementById('pizza')
-    pizza.onclick = () => { update(pizza.value) }
+    pizza.onclick = () => { 
+        updateFacts(pizza.value)
+        update(pizza.value)
+    };
 
     const pho = document.getElementById('pho')
-    pho.onclick = () => { update(pho.value) }
+    pho.onclick = () => { 
+        updateFacts(pho.value)
+        update(pho.value) 
+    };
 
     const ramen = document.getElementById('ramen')
-    ramen.onclick = () => { update(ramen.value) }
+    ramen.onclick = () => { 
+        updateFacts(ramen.value)
+        update(ramen.value) 
+    };
 
     const avacado = document.getElementById('avacado')
-    avacado.onclick = () => { update(avacado.value) }
+    avacado.onclick = () => {
+        updateFacts(avacado.value) 
+        update(avacado.value) 
+    };
 
     const fries = document.getElementById('fries')
-    fries.onclick = () => { update(fries.value) }
+    fries.onclick = () => {
+        updateFacts(fries.value) 
+        update(fries.value) 
+    };
 
     const beer = document.getElementById('beer')
-    beer.onclick = () => { update(beer.value) }
+    beer.onclick = () => {
+        updateFacts(beer.value) 
+        update(beer.value) 
+    };
 
-    const icecream = document.getElementById('ice-cream')
-    icecream.onclick = () => { update(icecream.value) }
+    const icecream = document.getElementById('icecream')
+    icecream.onclick = () => {
+        updateFacts(icecream.value) 
+        update(icecream.value) 
+    };
 
     const cookie = document.getElementById('cookie')
-    cookie.onclick = () => { update(cookie.value) }
+    cookie.onclick = () => {
+        updateFacts(cookie.value) 
+        update(cookie.value) 
+    };
+
+    function removeBars() {
+        chart.selectAll('rect').remove()
+        chart.selectAll('text.value')
+            // .data(dailyPercentage)
+            // .attr('class', 'value')
+            .remove()
+    };
 
     function update(fude) {
 
-        d3.json("lib/fudes.json").then(function (data) {
+        d3.json("./src/lib/fudes.json").then(function (data) {
             let foodData = data.filter(ele => ele[fude])
             
             const nutritionalInfo = foodData[0][fude].servings.serving;
@@ -344,61 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 .attr('y', yScaleLeft(3))
                 .attr('text-anchor', 'middle')
                 .text((a) => `${a.value}%`)
-                .on('mouseenter', handleMouseEnter)
-                .on('mouseleave', handleMouseLeave)
-
-
-            function handleMouseEnter(actual, i) {
-                d3.selectAll('.value')
-                    .attr('opacity', 0)
-
-                d3.select(this)
-                    .transition()
-                    .duration(300)
-                    .attr('opacity', 0.6)
-                    .attr('x', (a) => xScale(a.category))
-                    .attr('width', xScale.bandwidth())
-
-                const y = yScaleLeft(actual.value)
-
-                line = chart.append('line')
-                    .attr('id', 'limit')
-                    .attr('x1', 0)
-                    .attr('y1', y)
-                    .attr('x2', width)
-                    .attr('y2', y)
-
-                barGroups.append('text')
-                    .attr('class', 'divergence')
-                    .attr('x', (a) => xScale(a.category) + xScale.bandwidth() / 2)
-                    .attr('y', (a) => yScaleLeft(a.value * 1.01))
-                    .attr('fill', 'white')
-                    .attr('text-anchor', 'middle')
-                    .text((a, idx) => {
-                        const divergence = (a.value - actual.value).toFixed(1)
-
-                        let text = ''
-                        if (divergence > 0) text += '+'
-                        text += `${divergence}g`
-
-                        return idx !== i ? text : '';
-                    })
-            }
-
-            function handleMouseLeave() {
-                d3.selectAll('.value')
-                    .attr('opacity', 1)
-
-                d3.select(this)
-                    .transition()
-                    .duration(300)
-                    .attr('opacity', 1)
-                    .attr('x', (a) => xScale(a.category))
-                    .attr('width', xScale.bandwidth())
-
-                chart.selectAll('#limit').remove()
-                chart.selectAll('.divergence').remove()
-            }
 
         })
     }

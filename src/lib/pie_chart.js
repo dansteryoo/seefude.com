@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     };
-    
+
 
     //--------------------------- Nutrition Data
     const nutritionalInfo = foodData.food.servings.serving;
@@ -50,29 +50,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //--------------------------- Macro Formatter
     let macroHash = Object.keys(nutritionalInfo)
-                          .filter(key => macros.includes(key))
-                          .reduce((obj, key) => { 
-                              obj[key] = nutritionalInfo[key]
-                              return obj }, {});
+        .filter(key => macros.includes(key))
+        .reduce((obj, key) => {
+            obj[key] = nutritionalInfo[key]
+            return obj
+        }, {});
 
 
     let macroData = Object.entries(macroHash)
-                    .map((ele => {
-                        let hash = { category: '', value: '' };
-                            
-                        if (ele[0] === 'carbohydrate') {
-                            hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1, 4) + 's'
+        .map((ele => {
+            let hash = { category: '', value: '' };
 
-                        } else if (ele[0] === 'fat') {
-                            hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1) + 's'
+            if (ele[0] === 'carbohydrate') {
+                hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1, 4) + 's'
 
-                        } else {
-                            hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1)
-                        }
-                        
-                        hash.value =  ele[1]
-                        return hash
-                    }));
+            } else if (ele[0] === 'fat') {
+                hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1) + 's'
+
+            } else {
+                hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1)
+            }
+
+            hash.value = ele[1]
+            return hash
+        }));
 
     // macroData = [
     //    0: { category: "Carbs", value: "20.02" }
@@ -81,43 +82,44 @@ document.addEventListener('DOMContentLoaded', () => {
     //    ]
 
     let totalMacros = macroData.map((ele => {
-                        let hash = { category: '', value: '' }
+        let hash = { category: '', value: '' }
 
-                        if (ele.category === 'Carbs') {
-                            countMacros.Carbs += Number(parseFloat(ele.value).toFixed(1))
-                            hash.value = countMacros.Carbs.toString()
+        if (ele.category === 'Carbs') {
+            countMacros.Carbs += Number(parseFloat(ele.value).toFixed(1))
+            hash.value = countMacros.Carbs.toString()
 
-                        } else if (ele.category === 'Fats') {
-                            countMacros.Fats += Number(parseFloat(ele.value).toFixed(1))
-                            hash.value = countMacros.Fats.toString()
-                            
-                        } else {
-                            (ele.category === 'Protein')
-                            countMacros.Protein += Number(parseFloat(ele.value).toFixed(1))
-                            hash.value = countMacros.Protein.toString()
-                        }
+        } else if (ele.category === 'Fats') {
+            countMacros.Fats += Number(parseFloat(ele.value).toFixed(1))
+            hash.value = countMacros.Fats.toString()
 
-                        hash.category = ele.category
-                        return hash
-                    }));
+        } else {
+            (ele.category === 'Protein')
+            countMacros.Protein += Number(parseFloat(ele.value).toFixed(1))
+            hash.value = countMacros.Protein.toString()
+        }
 
-    
+        hash.category = ele.category
+        return hash
+    }));
+
+
     //--------------------------- Calories Formatter
-              
+
     let calHash = Object.keys(nutritionalInfo)
-                          .filter(key => cal.includes(key))
-                          .reduce((obj, key) => {
-                              obj[key] = nutritionalInfo[key]
-                              return obj }, {});
+        .filter(key => cal.includes(key))
+        .reduce((obj, key) => {
+            obj[key] = nutritionalInfo[key]
+            return obj
+        }, {});
 
     let calData = Object.entries(calHash)
-                        .map((ele => {
-                            let hash = { category: '', value: '' };
+        .map((ele => {
+            let hash = { category: '', value: '' };
 
-                            hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1)
-                            hash.value = ele[1]
-                        return hash
-                    }));
+            hash.category = ele[0].charAt(0).toUpperCase() + ele[0].slice(1)
+            hash.value = ele[1]
+            return hash
+        }));
 
     // calData = [
     //    0: { category: 'Calories', value: '159' }
@@ -126,9 +128,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalCals = calData.map((ele => {
         let hash = { category: '', value: '' }
 
-            countMacros.Calories += Math.round(parseFloat(ele.value))
-            hash.value = countMacros.Calories.toString()
-            hash.category = ele.category
+        countMacros.Calories += Math.round(parseFloat(ele.value))
+        hash.value = countMacros.Calories.toString()
+        hash.category = ele.category
         return hash
     }));
 
@@ -140,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const height = 320;
     const radius = Math.min(width, height) / 2 - margin;
 
-    
+
     //--------------------------- Colors Alternatives
-    
+
     // Red = #d7191c
     // Orange = #ffb347
     // Yellow = #fbf1d1
@@ -196,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .attr('stroke', 'black')
         .style('stroke-width', '1.5px')
 
-    
+
     svg.selectAll('slice')
         .data(pie(totalMacros))
         .enter()
@@ -222,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const vert = i * 33 - offset;
             return 'translate(' + horz + ',' + vert + ')';
         }))
-        
+
     legend.append('rect')
         .data(pie(totalMacros))
         .attr('width', 25)
